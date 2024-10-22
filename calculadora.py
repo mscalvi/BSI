@@ -36,7 +36,6 @@ def calculadora(valor1, valor2, operacao):
 
 
 # Testando a calculadora
-# Exemplos de entrada
 valor1 = input("Primeiro número: ")
 valor2 = input("Segundo número: ")
 operacao = input("Operação (+, -, *, /, ^): ")
