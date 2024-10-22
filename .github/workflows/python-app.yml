@@ -1,12 +1,6 @@
 name: Python application
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
@@ -14,20 +8,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.8'  # Você pode alterar a versão conforme necessário
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Se você não tiver dependências extras, pode remover a linha abaixo
-        # pip install -r requirements.txt
+        pip install -r requirements.txt  # Se você tiver um requirements.txt
 
-    - name: Run tests with unittest
+    - name: Run tests
       run: |
-        python -m unittest discover
+        python -m unittest calctests.py
