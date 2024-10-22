@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import unittest
-from calculadora import calculadora  # Supondo que seu arquivo da calculadora seja 'calculadora.py'
+from calculadora import calculadora 
 
 class TestCalculadora(unittest.TestCase):
 
